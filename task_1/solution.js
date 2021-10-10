@@ -11,7 +11,7 @@ function addInCartMessage(title, price) {
     // добавьте в конец переменной message пробел
     message = message + " ";
     // добавьте в конец переменной message текст 'за'
-    message = message + 'за';
+    message = message + "за";
     // добавьте в конец переменной message пробел
     message = message + " ";
     // добавьте в конец переменной message значение переменной productPrice
@@ -52,7 +52,7 @@ function addInCartSumChange(sum, delta) {
     // создайте переменную newSum и присвойте ей сумму oldSum и difference
     let newSum = oldSum + difference;
     // создайте переменную newSumText и присвойте ей результат склеивания переменной newSum и текста ' ₽'
-    let newSumText = newSum + '₽';
+    let newSumText = newSum + ' ₽';
     // замените склеивание, используемое в newSum Text на шаблонную строку
     newSumText = '${newSum} ₽';
     // Конец решения задания №1.3.
