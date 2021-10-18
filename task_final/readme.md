@@ -54,3 +54,77 @@ cформированный в соответствии с правилами.
 Проверьте перед отправкой решение с помощью автотеста.
 Для проверки отправьте преподавателю на проверку ссылку на github
 и ссылку на github-pages.
+
+function sendRequest(name, phone, address, goods, sum) {
+    let data = {goods: [], order: {}};
+
+    let countOfGoods = goods.length;
+
+    for (let i = 0; i <= countOfGoods; i += 1) {
+        data.goods.push(goods[i].title);
+    }
+
+    data.order.address = address;
+    data.order.sum = name + phone + address + goods + sum;
+
+    data.client = 'Иван';
+
+    let jsonData = JSON.stringify(data);
+
+    return jsonData;
+}
+
+function sendRequest(name, phone, address, goods, sum) {
+    let data = {order: {}, goods: []};
+
+    let countOfGoods = goods.length;
+
+    for (let i = 0; i < countOfGoods; i += 1 ) {
+        data.goods.push ({title: goods[i].title, count: goods[i].count});
+    }
+   
+    data.order.address = "ул. " + address.street + ", дом " + address.house + ", " +address.entrance + " подъезд, " + address.floor + " этаж, кв " + address.flat;
+    data.order.sum = sum;
+
+    data.client = name + " " + phone;
+
+    let jsonData = JSON.stringify({data});
+
+    return jsonData;
+}
+
+function sendRequest(name, phone, address, goods, sum) {
+    let data = {client: {name, phone},order: {address, sum}, goods: [{title, count}]};
+    let countOfGoods = goods.length;
+
+    for (let i = 0; i <= countOfGoods; i += 1) {
+        data.goods.push(goods[i].title);
+    }
+
+    data.order.address = address;
+    data.order.sum = name + phone + address + goods + sum;
+
+    data.client = 'Иван';
+
+    let jsonData = JSON.stringify({data});
+
+    return jsonData;
+}
+
+function sendRequest(name, phone, address, goods, sum) {
+    let data = {client: "", order: {}, goods: []};
+
+    let countOfGoods = goods.length;
+
+    for (let i = 0; i <= countOfGoods-1; i += 1) {
+        data.goods.push({title: goods[i].title, count: goods[i].count});
+    }
+
+    data.order.address = `ул. ${address.street}, дом ${address.house}, ${address.entrance} подъезд, ${address.floor} этаж, кв ${address.flat}`;
+    data.order.sum = sum;
+
+    data.client = `${name} ${phone}`;
+    
+    let jsonData = JSON.stringify({data});
+    return jsonData;
+}
